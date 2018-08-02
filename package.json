@@ -1,0 +1,13 @@
+{
+  "name": "smart-cube",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chris Nager",
+    "email": "cnager@gmail.com",
+    "url": "http://chrisnager.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "giiker": "^1.0.1"
+  }
+}
