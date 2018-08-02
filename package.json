@@ -6,8 +6,5 @@
     "email": "cnager@gmail.com",
     "url": "http://chrisnager.com"
   },
-  "license": "MIT",
-  "dependencies": {
-    "giiker": "^1.0.1"
-  }
+  "license": "MIT"
 }
