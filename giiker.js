@@ -15,7 +15,7 @@ class Giiker extends EventEmitter {
   async connect() {
     if (!global.navigator) throw new Error("window.navigator is not accesible. Maybe you're running Node.js?")
     if (!global.navigator.bluetooth) throw new Error('Web Bluetooth API is not accesible')
-    const device = await global.navigator.bluetooth.requestDevice({ filters: [{ namePrefix: 'GiC' }], optionalServices: [SERVICE_UUID] })
+    const device = await global.navigator.bluetooth.requestDevice({ filters: [{ namePrefix: 'Gi' }], optionalServices: [SERVICE_UUID] })
     const server = await device.gatt.connect()
     const service = await server.getPrimaryService(SERVICE_UUID)
     const characteristic = await service.getCharacteristic(CHARACTERISTIC_UUID)
