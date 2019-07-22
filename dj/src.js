@@ -1,7 +1,8 @@
-import GiiKER from './giiker'
+import Giiker from './giiker'
 
 const button = document.querySelector('button')
 const textarea = document.querySelector('textarea')
+const sounds = document.querySelector('#sounds')
 
 const cubeSounds = {
   kicka: { sound: new Howl({ src: ['samples/Kick.wav'] }) },
@@ -41,9 +42,13 @@ const playSound = move => {
   cubeSounds[moveMap[move]].sound.play()
 }
 
+sounds.innerHTML = Object.values(moveMap).map(moveName => {
+  document.createElement('li').innerHTML = moveName
+})
+
 button.addEventListener('click', async () => {
   button.disabled = true
-  const giiker = await GiiKER.connect()
+  const giiker = await Giiker.connect()
   button.textContent = 'Connected'
   giiker.on('move', move => {
     // const currentTextareaValue = textarea.value
