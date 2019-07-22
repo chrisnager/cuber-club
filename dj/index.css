@@ -1,25 +1,47 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: inherit;
   margin: 0;
+  display: flex;
+  flex-direction: column;
   font: 1rem/1.5 system-ui, sans-serif;
 }
 
 header {
-  padding: 1rem;
-  background-color: cyan;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1rem calc(50vw - 200px);
+  background-color: tomato;
+}
+
+a {
+  color: inherit;
 }
 
 main {
-  padding: 1rem;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1rem calc(50vw - 200px);
+  flex: 1;
 }
 
 /* .connect {} */
 
 .sequence {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .highlight {
   background: gold;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+  column-count: 3;
 }
 
 li {
@@ -27,10 +49,8 @@ li {
 }
 
 footer {
-  padding: 1rem;
-  background-color: cyan;
-}
-
-a {
-  color: inherit;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 1rem calc(50vw - 200px);
+  background-color: tomato;
 }
