@@ -8,10 +8,23 @@
   </head>
 
   <body>
-    <button>Connect</button>
-    <textarea placeholder="Moves"></textarea>
-    <ul id="sounds"></ul>
-    <p>Hold cube with white on top and green facing you.</p>
+    <header>
+      <h1>Cube DJ 🎧</h1>
+      <p>Use your bluetooth-enabled smart cube as a MIDI input device.</p>
+    </header>
+
+    <main>
+      <button class="connect">Connect</button>
+      <h2>Your moves</h2>
+      <div class="sequence"></div>
+      <h2>Sounds</h2>
+      <ul class="sounds"></ul>
+      <p>Hold cube with white on top and green facing you.</p>
+    </main>
+
+    <footer>
+      <p>&copy; 2019 &middot; Crafted by <a href="http://chrisnager.com">Chris Nager</a></p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.min.js"></script>
     <script src="build.js" charset="utf-8"></script>
   </body>
