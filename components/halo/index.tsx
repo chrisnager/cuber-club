@@ -19,9 +19,13 @@ export default function Halo() {
         body {
           height: inherit;
           margin: 0;
+          font: 1rem/1.5 system-ui, sans-serif;
+        }
+
+        #__next {
+          height: inherit;
           display: flex;
           flex-direction: column;
-          font: 1rem/1.5 system-ui, sans-serif;
         }
 
         header {
