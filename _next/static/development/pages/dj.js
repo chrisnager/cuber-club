@@ -21,33 +21,39 @@ function Footer() {
       lineNumber: 3
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
     },
     __self: this
   }, "Currently, ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://caniuse.com/#feat=web-bluetooth",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
   }, "Web Bluetooth support"), " is limited to Chrome, Opera, and Edge."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, "\xA9 2019 \xB7 Crafted by ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "http://chrisnager.com",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
-  }, "Chris Nager")));
+  }, "Chris Nager"))));
 }
 
 /***/ }),
@@ -139,10 +145,16 @@ function Header() {
       lineNumber: 3
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -150,20 +162,20 @@ function Header() {
     alt: "Logo",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
   }), " Cube DJ"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, "Use your ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://www.thecubicle.com/products/giiker-super-cube-i3s",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }, "Bluetooth-enabled smart cube"), " as a MIDI input device."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -171,10 +183,10 @@ function Header() {
     alt: "Cube in motion",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
-  }));
+  })));
 }
 
 /***/ }),
@@ -283,44 +295,50 @@ function Main() {
       lineNumber: 36
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("button", {
-    onClick: handleConnectClick,
-    disabled: !isEnabled,
+  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37
     },
     __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("button", {
+    onClick: handleConnectClick,
+    disabled: !isEnabled,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: this
   }, label), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 42
     },
     __self: this
   }, "Your moves"), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 43
     },
     __self: this
   }, "Hold cube with white on top and green facing you."), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
     className: "sequence",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 44
     },
     __self: this
   }, sequence), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 46
     },
     __self: this
   }, "Sounds"), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("ul", {
     className: "sounds",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 47
     },
     __self: this
   }, _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(_constants_move_map__WEBPACK_IMPORTED_MODULE_7__["default"]).map(function (moveName) {
@@ -329,17 +347,17 @@ function Main() {
       className: "".concat(moveName.replace("'", '-'), " ").concat(moveName === isHighlighted ? 'highlight' : ''),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 49
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("b", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 50
       },
       __self: this
     }, moveName), ": ", _constants_move_map__WEBPACK_IMPORTED_MODULE_7__["default"][moveName]);
-  })));
+  }))));
 }
 
 /***/ }),
@@ -11088,7 +11106,7 @@ function () {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!*********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fdj&absolutePagePath=%2FUsers%2Fchrisnager%2FDropbox%2FChris%2FProjects%2Fcube-api%2Fpages%2Fdj%2Findex.tsx ***!
   \*********************************************************************************************************************************************************/
@@ -11111,5 +11129,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=dj.js.map
