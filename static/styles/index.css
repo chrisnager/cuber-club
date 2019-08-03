@@ -26,7 +26,7 @@ header > div {
   max-width: 400px;
   margin-right: auto;
   margin-left: auto;
-  padding: 1rem 6rem;
+  padding: 1rem 3rem;
 }
 
 header > div > h1 {
@@ -36,14 +36,31 @@ header > div > h1 {
   font-size: 2.25rem;
 }
 
+@media (max-width: 500px) {
+  header > div > h1 {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+}
+
 header > div > h1 > img {
   width: 4rem;
   height: 4rem;
   margin-right: 1rem;
+  display: block;
+}
+
+@media (max-width: 500px) {
+  header > div > h1 > img {
+    margin-left: -1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 header > div > img {
   max-height: 100px;
+  display: block;
 }
 
 a {
@@ -70,9 +87,9 @@ button:focus {
 button::before {
   content: '➪';
   position: absolute;
-  top: 0;
+  top: -0.25rem;
   left: -2.25rem;
-  font-size: 29px;
+  font-size: 2rem;
 }
 
 main {
@@ -83,7 +100,7 @@ main > div {
   max-width: 400px;
   margin-right: auto;
   margin-left: auto;
-  padding: 1rem 6rem;
+  padding: 1rem 3rem;
 }
 
 .sequence {
@@ -98,6 +115,12 @@ ul {
   padding-left: 0;
   list-style: none;
   column-count: 3;
+}
+
+@media (max-width: 500px) {
+  ul {
+    column-count: 2;
+  }
 }
 
 li {
@@ -117,5 +140,5 @@ footer > div {
   max-width: 400px;
   margin-right: auto;
   margin-left: auto;
-  padding: 1rem 6rem;
+  padding: 1rem 3rem;
 }
