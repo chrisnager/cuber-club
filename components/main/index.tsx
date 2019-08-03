@@ -37,9 +37,11 @@ export default function Main() {
       <button onClick={handleConnectClick} disabled={!isEnabled}>
         {label}
       </button>
+
       <h2>Your moves</h2>
       <p>Hold cube with white on top and green facing you.</p>
       <div className="sequence">{sequence}</div>
+
       <h2>Sounds</h2>
       <ul className="sounds">
         {Object.keys(moveMap).map(moveName => (
