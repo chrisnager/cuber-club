@@ -11,7 +11,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export && touch ./out/.nojekyll"
+    "export": "npm run build && next export && rm -rf out/static && mv out/* . && rm -rf out && touch .nojekyll"
   },
   "dependencies": {
     "howler": "^2.1.2",
