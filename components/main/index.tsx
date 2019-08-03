@@ -34,22 +34,24 @@ export default function Main() {
 
   return (
     <main>
-      <button onClick={handleConnectClick} disabled={!isEnabled}>
-        {label}
-      </button>
+      <div>
+        <button onClick={handleConnectClick} disabled={!isEnabled}>
+          {label}
+        </button>
 
-      <h2>Your moves</h2>
-      <p>Hold cube with white on top and green facing you.</p>
-      <div className="sequence">{sequence}</div>
+        <h2>Your moves</h2>
+        <p>Hold cube with white on top and green facing you.</p>
+        <div className="sequence">{sequence}</div>
 
-      <h2>Sounds</h2>
-      <ul className="sounds">
-        {Object.keys(moveMap).map(moveName => (
-          <li key={moveName} className={`${moveName.replace("'", '-')} ${moveName === isHighlighted ? 'highlight' : ''}`}>
-            <b>{moveName}</b>: {moveMap[moveName]}
-          </li>
-        ))}
-      </ul>
+        <h2>Sounds</h2>
+        <ul className="sounds">
+          {Object.keys(moveMap).map(moveName => (
+            <li key={moveName} className={`${moveName.replace("'", '-')} ${moveName === isHighlighted ? 'highlight' : ''}`}>
+              <b>{moveName}</b>: {moveMap[moveName]}
+            </li>
+          ))}
+        </ul>
+      </div>
     </main>
   )
 }
