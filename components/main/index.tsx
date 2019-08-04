@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Giiker from '../../scripts/giiker'
 import cubeSounds from '../../constants/cube-sounds'
 import moveMap from '../../constants/move-map'
+import Player from '../player'
 
 export default function Main() {
   const [isEnabled, setsIsEnabled] = useState(true)
@@ -42,6 +43,8 @@ export default function Main() {
         <h2>Your moves</h2>
         <p>Hold cube with white on top and green facing you.</p>
         <div className="sequence">{sequence}</div>
+
+        <Player />
 
         <h2>Sounds</h2>
         <ul className="sounds">
