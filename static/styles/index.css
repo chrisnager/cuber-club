@@ -84,7 +84,7 @@ button:focus {
   background-color: rgb(142, 255, 255);
 }
 
-button::before {
+.connect::before {
   content: '➪';
   position: absolute;
   top: -0.25rem;

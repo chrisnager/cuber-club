@@ -36,7 +36,7 @@ export default function Main() {
   return (
     <main>
       <div>
-        <button onClick={handleConnectClick} disabled={!isEnabled}>
+        <button onClick={handleConnectClick} disabled={!isEnabled} className="connect">
           {label}
         </button>
 
