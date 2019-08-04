@@ -1,16 +1,6 @@
-import { useState } from 'react'
+import Selection from '../selection'
 
-export default function Track({ move, label, tracksLength, sound, position, isHighlighted }) {
-  const [checked, setChecked] = useState(false)
-
-  if (checked) {
-    sound.sound.play()
-  }
-
-  const handleCheckboxChange = index => {
-    setChecked(!checked)
-  }
-
+export default function Track({ move, label, tracksLength, sound, isHighlighted }) {
   return (
     <tr>
       <td className={move === isHighlighted ? 'highlight' : ''}>
@@ -20,9 +10,7 @@ export default function Track({ move, label, tracksLength, sound, position, isHi
       {Array(tracksLength)
         .fill(1)
         .map((_, index) => (
-          <td key={Math.random()} className={index === position ? 'highlight' : ''}>
-            <input type="checkbox" onChange={index => handleCheckboxChange(index)} {...{ checked }} />
-          </td>
+          <Selection {...{ sound }} />
         ))}
     </tr>
   )
