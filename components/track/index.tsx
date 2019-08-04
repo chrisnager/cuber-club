@@ -1,6 +1,6 @@
 import Selection from '../selection'
 
-export default function Track({ move, label, tracksLength, position, sound, isHighlighted }) {
+export default function Track({ move, label, tracksLength, position, sound, isHighlighted, lastTurn }) {
   return (
     <tr>
       <td className={move === isHighlighted ? 'highlight' : ''}>
@@ -10,7 +10,7 @@ export default function Track({ move, label, tracksLength, position, sound, isHi
       {Array(tracksLength)
         .fill(1)
         .map((_, index) => (
-          <Selection key={move + index} {...{ position, index, sound }} />
+          <Selection key={move + index} {...{ position, index, sound, move, lastTurn }} />
         ))}
     </tr>
   )

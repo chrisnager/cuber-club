@@ -4,11 +4,11 @@ import moveMap from '../../constants/move-map'
 import PlayerHead from '../player-head'
 import Track from '../track'
 
-export default function Player({ isHighlighted }) {
+export default function Player({ isHighlighted, lastTurn }) {
   const [paused, setPaused] = useState(true)
   const [position, setPosition] = useState(0)
 
-  const tracksLength = 16
+  const tracksLength = 32
   const bpm = 120
   const msPerBeat = (1000 * 60) / (bpm * 4)
 
@@ -53,7 +53,7 @@ export default function Player({ isHighlighted }) {
               move={cubeSound}
               label={moveMap[cubeSound]}
               sound={cubeSounds[moveMap[cubeSound]]}
-              {...{ tracksLength, position, isHighlighted }}
+              {...{ tracksLength, position, isHighlighted, lastTurn }}
             />
           ))}
         </tbody>

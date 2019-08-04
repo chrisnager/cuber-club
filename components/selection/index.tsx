@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function Selection({ position, index, sound }) {
+export default function Selection({ position, index, sound, move, lastTurn }) {
   const [checked, setChecked] = useState(false)
+
+  useEffect(() => {
+    if (move === lastTurn && position === index) {
+      handleChange()
+    }
+  }, [lastTurn])
 
   if (position === index && checked) {
     sound.sound.play()
