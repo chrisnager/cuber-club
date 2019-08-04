@@ -39,19 +39,7 @@ export default function Player({ isHighlighted }) {
   }
 
   return (
-    <section>
-      <style jsx>{`
-        section {
-          margin-top: 2rem;
-          overflow-x: auto;
-        }
-
-        div {
-          display: flex;
-          justify-content: space-between;
-        }
-      `}</style>
-
+    <section className="player">
       <table>
         <thead>
           <tr>

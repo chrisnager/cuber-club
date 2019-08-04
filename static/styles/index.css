@@ -179,3 +179,13 @@ footer > div {
   margin-left: auto;
   padding: 1rem 3rem;
 }
+
+.player {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.player div {
+  display: flex;
+  justify-content: space-between;
+}
