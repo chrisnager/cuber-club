@@ -1,25 +1,6 @@
 import { Howl } from 'howler'
-import { any } from 'prop-types'
 
-interface CubeSounds {
-  'Kick 1': { sound: any }
-  'Kick 2': { sound: any }
-  'Snare 1': { sound: any }
-  'Snare 2': { sound: any }
-  Rim: { sound: any }
-  'Hi-hat 1': { sound: any }
-  'Hi-hat 2': { sound: any }
-  'Hi-hat 3': { sound: any }
-  Cymbal: { sound: any }
-  'Bongo high': { sound: any }
-  'Bongo low': { sound: any }
-  'Conga low': { sound: any }
-  Cowbell: { sound: any }
-  'Tamb 1': { sound: any }
-  'Tamb 2': { sound: any }
-}
-
-const cubeSounds: CubeSounds = {
+export default {
   'Kick 1': { sound: new Howl({ src: ['/static/samples/Kick.wav'] }) },
   'Kick 2': { sound: new Howl({ src: ['/static/samples/Kick Accent.wav'] }) },
   'Snare 1': { sound: new Howl({ src: ['/static/samples/Snare.wav'] }) },
@@ -36,5 +17,3 @@ const cubeSounds: CubeSounds = {
   'Tamb 1': { sound: new Howl({ src: ['/static/samples/Tamb 1.wav'] }) },
   'Tamb 2': { sound: new Howl({ src: ['/static/samples/Tamb 2.wav'] }) }
 }
-
-export default cubeSounds
