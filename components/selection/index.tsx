@@ -1,19 +1,25 @@
 import { useState } from 'react'
 
-export default function Selection({ sound }) {
+export default function Selection({ position, index, sound }) {
   const [checked, setChecked] = useState(false)
 
-  if (checked) {
+  if (position === index && checked) {
     sound.sound.play()
   }
 
-  const handleCheckboxChange = () => {
+  const handleChange = () => {
     setChecked(!checked)
   }
 
+  const handleClick = () => {
+    if (!checked) {
+      sound.sound.play()
+    }
+  }
+
   return (
-    <td key={sound.sound.toString()} className={`selection ${checked ? 'highlight' : ''}`}>
-      <input type="checkbox" onChange={handleCheckboxChange} {...{ checked }} />
+    <td key={index} className={`selection ${checked ? 'highlight' : ''}`}>
+      <input type="checkbox" onChange={handleChange} onClick={handleClick} {...{ checked }} />
     </td>
   )
 }

@@ -10,7 +10,7 @@ export default function Player({ isHighlighted }) {
 
   const tracksLength = 16
   const bpm = 120
-  const msPerBeat = (1000 * 60) / bpm
+  const msPerBeat = (1000 * 60) / (bpm * 4)
 
   useEffect(() => {
     const interval = setInterval(() => {
