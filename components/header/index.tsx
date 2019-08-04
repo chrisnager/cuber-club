@@ -1,6 +1,15 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
 export default function Header() {
   return (
-    <header>
+    <header
+      sx={{
+        fontWeight: 'bold',
+        fontSize: 4,
+        color: 'primary'
+      }}
+    >
       <div>
         <h1>
           <img src="/static/images/logo.svg" alt="Logo" /> Cube DJ

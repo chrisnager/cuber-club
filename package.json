@@ -14,14 +14,18 @@
     "export": "npm run build && next export && rm -rf _next out/static && mv out/* . && rm -rf out"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.15",
+    "@mdx-js/react": "^1.1.5",
     "howler": "^2.1.2",
     "next": "^9.0.3",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "theme-ui": "^0.2.26"
   },
   "devDependencies": {
     "@types/node": "^12.6.9",
     "@types/react": "^16.8.24",
+    "@types/theme-ui": "^0.2.0",
     "typescript": "^3.5.3"
   }
 }
