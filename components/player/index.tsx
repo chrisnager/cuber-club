@@ -8,11 +8,12 @@ export default function Player({ isHighlighted }) {
   const [position, setPosition] = useState(0)
 
   const tracksLength = 16
+  const bpm = 120
 
   useEffect(() => {
     const interval = setInterval(() => {
       setPosition(position => (position === tracksLength - 1 ? 0 : position + 1))
-    }, 500)
+    }, bpm)
 
     if (paused) clearInterval(interval)
 
@@ -40,28 +41,34 @@ export default function Player({ isHighlighted }) {
   return (
     <section>
       <style jsx>{`
+        section {
+          margin-top: 2rem;
+        }
+
         div {
           display: flex;
           justify-content: space-between;
         }
       `}</style>
 
-      <hr />
-
-      <div>
-        <button disabled={!paused} onClick={handleLeftClick}>
-          Left
-        </button>
-        <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
-        <button disabled={!paused} onClick={handleRightClick}>
-          Right
-        </button>
-      </div>
-
       <table>
         <thead>
           <tr>
-            <th colSpan={2} />
+            <th colSpan={2}>Moves</th>
+            <th colSpan={tracksLength}>
+              <div>
+                <button disabled={!paused} onClick={handleLeftClick}>
+                  {'<'}
+                </button>
+                <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
+                <button disabled={!paused} onClick={handleRightClick}>
+                  {'>'}
+                </button>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th colSpan={2}>-------------</th>
             <th colSpan={tracksLength}>
               <input disabled={!paused} type="range" max={tracksLength - 1} value={position} onChange={handleInputChange} />
             </th>

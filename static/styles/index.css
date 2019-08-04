@@ -109,7 +109,7 @@ main > div {
 }
 
 .highlight {
-  background: gold;
+  background: gold !important;
 }
 
 ul {
@@ -131,7 +131,7 @@ td {
 
 b {
   display: inline-block;
-  min-width: 1rem;
+  /* min-width: 1rem; */
 }
 
 table {
@@ -139,14 +139,30 @@ table {
   border-collapse: collapse;
 }
 
-th {
-  text-align: left;
-}
-
 th,
 td {
   padding: 0;
   white-space: nowrap;
+}
+
+th {
+  text-align: left;
+}
+
+td:nth-of-type(4n + 6) {
+  border-right: 1px solid;
+}
+
+td:last-of-type {
+  border-right: none;
+}
+
+td:nth-of-type(2) {
+  text-align: right;
+}
+
+tr:nth-last-of-type(2n + 1) > td {
+  background-color: #eee;
 }
 
 input[type='range'] {
