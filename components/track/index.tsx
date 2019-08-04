@@ -1,17 +1,11 @@
-import { useState } from 'react'
-
-export default function Track({ label, sound }) {
-  const [isEnabled, setsIsEnabled] = useState(true)
-
-  const tracksLength = 8
-
+export default function Track({ label, tracksLength, sound, position }) {
   return (
     <tr>
       <td>{label}</td>
       {Array(tracksLength)
         .fill(1)
-        .map(() => (
-          <td key={Math.random()}>
+        .map((_, index) => (
+          <td key={Math.random()} className={index === position ? 'highlight' : ''}>
             <input type="checkbox" />
           </td>
         ))}

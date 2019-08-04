@@ -1,12 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import cubeSounds from '../../constants/cube-sounds'
 import moveMap from '../../constants/move-map'
 import Track from '../track'
 
 export default function Player() {
-  const [isEnabled, setsIsEnabled] = useState(true)
+  const [position, setPosition] = useState(0)
 
   const tracksLength = 8
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition(position => (position === tracksLength - 1 ? 0 : position + 1))
+    }, 500)
+
+    return () => {
+      clearInterval(interval)
+      setPosition(0)
+    }
+  }, [setPosition])
 
   return (
     <section>
@@ -20,13 +31,13 @@ export default function Player() {
                   width: 100%;
                 }
               `}</style>
-              <input type="range" max={tracksLength - 1} />
+              <input type="range" max={tracksLength - 1} value={position} onChange={() => console.log({ position })} />
             </th>
           </tr>
         </thead>
         <tbody>
-          {Object.keys(cubeSounds).map(cubeSound => (
-            <Track key={Math.random()} label={cubeSound} sound={cubeSounds[cubeSound]} />
+          {Object.keys(cubeSounds).map((cubeSound, index) => (
+            <Track key={Math.random()} label={cubeSound} sound={cubeSounds[cubeSound]} {...{ tracksLength, position }} />
           ))}
         </tbody>
       </table>
