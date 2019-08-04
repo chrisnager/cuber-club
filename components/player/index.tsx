@@ -43,6 +43,7 @@ export default function Player({ isHighlighted }) {
       <style jsx>{`
         section {
           margin-top: 2rem;
+          overflow-x: auto;
         }
 
         div {
@@ -58,11 +59,11 @@ export default function Player({ isHighlighted }) {
             <th colSpan={tracksLength}>
               <div>
                 <button disabled={!paused} onClick={handleLeftClick}>
-                  {'<'}
+                  ↤
                 </button>
                 <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
                 <button disabled={!paused} onClick={handleRightClick}>
-                  {'>'}
+                  ↦
                 </button>
               </div>
             </th>
