@@ -59,8 +59,9 @@ header > div > h1 > img {
 }
 
 header > div > img {
-  max-height: 100px;
+  max-width: 136px;
   display: block;
+  filter: brightness(2);
 }
 
 a {
@@ -123,13 +124,33 @@ ul {
   }
 }
 
-li {
+li,
+td {
   transition: background-color 200ms;
 }
 
 b {
   display: inline-block;
   min-width: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0;
+  white-space: nowrap;
+}
+
+input[type='range'] {
+  width: 100%;
 }
 
 footer {

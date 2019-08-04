@@ -40,20 +40,20 @@ export default function Main() {
           {label}
         </button>
 
+        <Player {...{ isHighlighted }} />
+
         <h2>Your moves</h2>
         <p>Hold cube with white on top and green facing you.</p>
         <div className="sequence">{sequence}</div>
 
-        <Player />
-
-        <h2>Sounds</h2>
+        {/* <h2>Sounds</h2>
         <ul className="sounds">
           {Object.keys(moveMap).map(moveName => (
             <li key={moveName} className={`${moveName.replace("'", '-')} ${moveName === isHighlighted ? 'highlight' : ''}`}>
               <b>{moveName}</b>: {moveMap[moveName]}
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </main>
   )

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import cubeSounds from '../../constants/cube-sounds'
+import moveMap from '../../constants/move-map'
 import Track from '../track'
 
-export default function Player() {
+export default function Player({ isHighlighted }) {
   const [paused, setPaused] = useState(true)
   const [position, setPosition] = useState(0)
 
@@ -39,55 +40,42 @@ export default function Player() {
   return (
     <section>
       <style jsx>{`
-        table {
-          border-collapse: collapse;
-        }
-
-        th {
-          text-align: left;
-        }
-
-        th,
-        td {
-          padding: 0;
-          white-space: nowrap;
-        }
-
-        input[type='range'] {
-          width: 100%;
-        }
-
         div {
           display: flex;
           justify-content: space-between;
         }
       `}</style>
 
+      <hr />
+
       <div>
         <button disabled={!paused} onClick={handleLeftClick}>
           Left
         </button>
+        <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
         <button disabled={!paused} onClick={handleRightClick}>
           Right
         </button>
       </div>
 
-      <hr />
-
       <table>
         <thead>
           <tr>
-            <th>
-              <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
-            </th>
+            <th colSpan={2} />
             <th colSpan={tracksLength}>
               <input disabled={!paused} type="range" max={tracksLength - 1} value={position} onChange={handleInputChange} />
             </th>
           </tr>
         </thead>
         <tbody>
-          {Object.keys(cubeSounds).map(cubeSound => (
-            <Track key={Math.random()} label={cubeSound} sound={cubeSounds[cubeSound]} {...{ tracksLength, position }} />
+          {Object.keys(moveMap).map(cubeSound => (
+            <Track
+              key={Math.random()}
+              move={cubeSound}
+              label={moveMap[cubeSound]}
+              sound={cubeSounds[moveMap[cubeSound]]}
+              {...{ tracksLength, position, isHighlighted }}
+            />
           ))}
         </tbody>
       </table>

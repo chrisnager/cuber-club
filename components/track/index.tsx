@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Track({ label, tracksLength, sound, position }) {
+export default function Track({ move, label, tracksLength, sound, position, isHighlighted }) {
   const [checked, setChecked] = useState(false)
 
   if (checked) {
@@ -13,7 +13,10 @@ export default function Track({ label, tracksLength, sound, position }) {
 
   return (
     <tr>
-      <td>{label}</td>
+      <td className={move === isHighlighted ? 'highlight' : ''}>
+        <b>{move}</b>
+      </td>
+      <td className={move === isHighlighted ? 'highlight' : ''}>{label}</td>
       {Array(tracksLength)
         .fill(1)
         .map((_, index) => (
