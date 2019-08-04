@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import cubeSounds from '../../constants/cube-sounds'
 import moveMap from '../../constants/move-map'
+import PlayerHead from '../player-head'
 import Track from '../track'
 
 export default function Player({ isHighlighted }) {
@@ -9,11 +10,12 @@ export default function Player({ isHighlighted }) {
 
   const tracksLength = 16
   const bpm = 120
+  const msPerBeat = (1000 * 60) / bpm
 
   useEffect(() => {
     const interval = setInterval(() => {
       setPosition(position => (position === tracksLength - 1 ? 0 : position + 1))
-    }, bpm)
+    }, msPerBeat)
 
     if (paused) clearInterval(interval)
 
@@ -42,31 +44,12 @@ export default function Player({ isHighlighted }) {
     <section className="player">
       <table>
         <thead>
-          <tr>
-            <th colSpan={2}>Moves</th>
-            <th colSpan={tracksLength}>
-              <div>
-                <button disabled={!paused} onClick={handleLeftClick}>
-                  ↤
-                </button>
-                <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
-                <button disabled={!paused} onClick={handleRightClick}>
-                  ↦
-                </button>
-              </div>
-            </th>
-          </tr>
-          <tr>
-            <th colSpan={2}>-------------</th>
-            <th colSpan={tracksLength}>
-              <input disabled={!paused} type="range" max={tracksLength - 1} value={position} onChange={handleInputChange} />
-            </th>
-          </tr>
+          <PlayerHead {...{ tracksLength, paused, handleLeftClick, handlePlayPause, handleRightClick, position, handleInputChange }} />
         </thead>
         <tbody>
           {Object.keys(moveMap).map(cubeSound => (
             <Track
-              key={Math.random()}
+              key={cubeSound}
               move={cubeSound}
               label={moveMap[cubeSound]}
               sound={cubeSounds[moveMap[cubeSound]]}

@@ -8,7 +8,7 @@ export default function Halo() {
         // @ts-ignore */}
         <meta charset="utf-8" />
         <title>Cube DJ | Cuber Club</title>
-        {/* <link rel="stylesheet" href="/static/styles/index.css" /> */}
+        <link rel="stylesheet" href="/static/styles/index.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="/static/images/favicon.png" />
       </Head>

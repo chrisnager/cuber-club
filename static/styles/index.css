@@ -22,8 +22,10 @@ header {
   background-color: var(--main);
 }
 
-header > div {
-  max-width: 400px;
+header > div,
+footer > div,
+main > div {
+  max-width: 600px;
   margin-right: auto;
   margin-left: auto;
   padding: 1rem 3rem;
@@ -36,7 +38,7 @@ header > div > h1 {
   font-size: 2.25rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   header > div > h1 {
     flex-direction: column;
     align-items: flex-start;
@@ -51,7 +53,7 @@ header > div > h1 > img {
   display: block;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   header > div > h1 > img {
     margin-left: -1rem;
     margin-bottom: 1.5rem;
@@ -97,13 +99,6 @@ main {
   flex: 1;
 }
 
-main > div {
-  max-width: 400px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1rem 3rem;
-}
-
 .sequence {
   font-size: 1.5rem;
 }
@@ -118,7 +113,7 @@ ul {
   column-count: 3;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   ul {
     column-count: 2;
   }
@@ -173,13 +168,6 @@ footer {
   background-color: var(--main);
 }
 
-footer > div {
-  max-width: 400px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1rem 3rem;
-}
-
 .player {
   margin-top: 2rem;
   overflow-x: auto;
@@ -188,4 +176,8 @@ footer > div {
 .player div {
   display: flex;
   justify-content: space-between;
+}
+
+.selection {
+  text-align: center;
 }

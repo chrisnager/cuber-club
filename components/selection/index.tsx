@@ -12,7 +12,7 @@ export default function Selection({ sound }) {
   }
 
   return (
-    <td key={Math.random()} className={checked ? 'highlight' : ''}>
+    <td key={sound.sound.toString()} className={`selection ${checked ? 'highlight' : ''}`}>
       <input type="checkbox" onChange={handleCheckboxChange} {...{ checked }} />
     </td>
   )

@@ -9,8 +9,8 @@ export default function Track({ move, label, tracksLength, sound, isHighlighted 
       <td className={move === isHighlighted ? 'highlight' : ''}>{label}</td>
       {Array(tracksLength)
         .fill(1)
-        .map((_, index) => (
-          <Selection {...{ sound }} />
+        .map(() => (
+          <Selection key={move} {...{ sound }} />
         ))}
     </tr>
   )
