@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import cubeSounds from '../../constants/cube-sounds'
-import moveMap from '../../constants/move-map'
 import Track from '../track'
 
 export default function Player() {
+  const [paused, setPaused] = useState(false)
   const [position, setPosition] = useState(0)
 
   const tracksLength = 8
@@ -13,25 +13,35 @@ export default function Player() {
       setPosition(position => (position === tracksLength - 1 ? 0 : position + 1))
     }, 500)
 
+    if (paused) clearInterval(interval)
+
     return () => {
       clearInterval(interval)
-      setPosition(0)
     }
-  }, [setPosition])
+  }, [setPosition, paused])
+
+  const handlePlayPause = () => {
+    setPaused(!paused)
+  }
+
+  const handleInputChange = ({ target: { value } }) => {
+    setPosition(+value)
+  }
 
   return (
     <section>
+      <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
       <table>
         <thead>
           <tr>
-            <th>Player</th>
+            <th />
             <th colSpan={tracksLength}>
               <style jsx>{`
                 input[type='range'] {
                   width: 100%;
                 }
               `}</style>
-              <input type="range" max={tracksLength - 1} value={position} onChange={() => console.log({ position })} />
+              <input disabled={!paused} type="range" max={tracksLength - 1} value={position} onChange={handleInputChange} />
             </th>
           </tr>
         </thead>
