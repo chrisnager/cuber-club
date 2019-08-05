@@ -43,7 +43,7 @@ export default function Main() {
           {label}
         </button>
 
-        <Player lastTurn={sequence[sequence.length - 1]} {...{ isHighlighted }} />
+        <Player lastTurn={sequence[sequence.length - 1]} {...{ isHighlighted, sequence }} />
 
         <h2>Your moves</h2>
         <p>Hold cube with white on top and green facing you.</p>

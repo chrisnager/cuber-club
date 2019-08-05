@@ -4,7 +4,7 @@ import moveMap from '../../constants/move-map'
 import PlayerHead from '../player-head'
 import Track from '../track'
 
-export default function Player({ isHighlighted, lastTurn }) {
+export default function Player({ isHighlighted, lastTurn, sequence }) {
   const [paused, setPaused] = useState(true)
   const [position, setPosition] = useState(0)
 
@@ -24,11 +24,18 @@ export default function Player({ isHighlighted, lastTurn }) {
     }
   }, [setPosition, paused])
 
+  useEffect(() => {
+    if (lastTurn === 'D') handleLeftClick()
+    if (lastTurn === "D'") handleRightClick()
+  }, [lastTurn, sequence])
+
   const handleLeftClick = () => {
+    console.log('handleLeftClick')
     setPosition(position - 1)
   }
 
   const handleRightClick = () => {
+    console.log('handleRightClick')
     setPosition(position + 1)
   }
 
