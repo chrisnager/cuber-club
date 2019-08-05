@@ -104,7 +104,7 @@ main {
 }
 
 .highlight {
-  background: gold !important;
+  background: var(--main) !important;
 }
 
 ul {
@@ -161,8 +161,9 @@ tr:nth-last-of-type(2n + 1) > td {
 }
 
 input[type='range'] {
-  width: 100%;
-  margin: 0;
+  width: calc(100% - 6px);
+  margin: 0 auto;
+  display: block;
 }
 
 footer {
