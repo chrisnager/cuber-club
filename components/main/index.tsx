@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import Giiker from '../../scripts/giiker'
-// import cubeSounds from '../../constants/cube-sounds'
-// import moveMap from '../../constants/move-map'
 import Player from '../player'
 
 export default function Main() {
@@ -9,10 +7,6 @@ export default function Main() {
   const [label, setLabel] = useState('Connect cube')
   const [sequence, setSequence] = useState([])
   const [isHighlighted, setIsHighlighted] = useState(null)
-
-  // const playSound = move => {
-  //   cubeSounds[moveMap[move]].sound.play()
-  // }
 
   // const updateLocation = move => {
   //   window.location.href += move
@@ -36,9 +30,6 @@ export default function Main() {
     giiker.on('move', move => {
       // TODO: Update URL to include sequence
       // updateLocation(move.notation)
-
-      // Probably don't need this here because sound playing is duplicated
-      // playSound(move.notation)
 
       setSequence([...sequence, move.notation])
       setAndRemoveHighlight(move.notation)
