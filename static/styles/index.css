@@ -25,7 +25,7 @@ header {
 header > div,
 footer > div,
 main > div {
-  max-width: 600px;
+  max-width: 800px;
   margin-right: auto;
   margin-left: auto;
   padding: 1rem 3rem;
@@ -38,7 +38,7 @@ header > div > h1 {
   font-size: 2.25rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   header > div > h1 {
     flex-direction: column;
     align-items: flex-start;
@@ -53,7 +53,7 @@ header > div > h1 > img {
   display: block;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   header > div > h1 > img {
     margin-left: -1rem;
     margin-bottom: 1.5rem;
@@ -113,7 +113,7 @@ ul {
   column-count: 3;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   ul {
     column-count: 2;
   }
@@ -162,6 +162,7 @@ tr:nth-last-of-type(2n + 1) > td {
 
 input[type='range'] {
   width: 100%;
+  margin: 0;
 }
 
 footer {

@@ -24,7 +24,7 @@ export default function Selection({ position, index, sound, move, lastTurn }) {
   }
 
   return (
-    <td key={index} className={`selection ${checked ? 'highlight' : ''}`}>
+    <td key={index} className={`selection ${position === index ? 'highlight' : ''}`}>
       <input type="checkbox" onChange={handleChange} onClick={handleClick} {...{ checked }} />
     </td>
   )
