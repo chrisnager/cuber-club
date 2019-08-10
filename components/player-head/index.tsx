@@ -11,15 +11,15 @@ export default function PlayerHead({
     <>
       <tr>
         <th colSpan={2}>
-          <button onClick={handlePlayPause}>{paused ? 'Play' : 'Pause'}</button>
+          <button onClick={handlePlayPause}>{paused ? 'Play (B)' : 'Pause (B)'}</button>
         </th>
         <th colSpan={tracksLength}>
           <div>
             <button disabled={!paused} onClick={handleLeftClick}>
-              ↤
+              ↤ (D)
             </button>
             <button disabled={!paused} onClick={handleRightClick}>
-              ↦
+              (D') ↦
             </button>
           </div>
         </th>
