@@ -2,7 +2,8 @@ export default function Footer() {
   return (
     <footer>
       <div>
-        <p>
+        <p id="1">
+          <sup>1 </sup>
           <a href="https://caniuse.com/#feat=web-bluetooth">Web Bluetooth support</a> is currently limited to Chrome, Opera, and Edge.
         </p>
         <p>
