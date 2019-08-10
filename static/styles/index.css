@@ -28,7 +28,7 @@ header {
 header > div,
 footer > div,
 main > div {
-  max-width: 800px;
+  /* max-width: 800px; */
   margin-right: auto;
   margin-left: auto;
   padding: 1rem 3rem;
@@ -140,6 +140,7 @@ table {
 
 th,
 td {
+  height: 32px;
   padding: 0;
   white-space: nowrap;
 }
@@ -148,12 +149,18 @@ th {
   text-align: left;
 }
 
+td:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 td:nth-of-type(4n + 5) {
   box-shadow: 1px 0;
 }
 
 td:last-of-type {
-  border-right: none;
+  box-shadow: none;
 }
 
 td:nth-of-type(2) {
@@ -165,16 +172,12 @@ tr:nth-last-of-type(2n + 1) > td {
 }
 
 input[type='range'] {
-  width: calc(100% - 16px);
   height: 32px;
-  margin: 0 auto;
   display: block;
-}
 
-input[type='range'] {
   -webkit-appearance: none;
   width: 100%;
-  margin: 0px 0;
+  margin: 0;
 }
 
 input[type='range']:focus {
@@ -277,15 +280,20 @@ footer {
   position: relative;
 }
 
-.player div {
+.player > div:first-of-type {
   display: flex;
+  padding-bottom: 0.5rem;
 }
 
-.player div button:last-of-type {
-  margin-left: 1rem;
+.player div button:first-of-type {
+  width: 115px;
 }
 
-.player > div {
+.player div button:not(:first-of-type) {
+  margin-left: 0.5rem;
+}
+
+.player > div:last-of-type {
   margin-left: 120px;
   overflow-x: scroll;
   overflow-y: visible;
@@ -295,7 +303,10 @@ footer {
   left: 0;
   position: absolute;
   top: auto;
-  width: 120px;
+  width: 121px;
+  padding-right: 2px;
+  padding-left: 2px;
+  box-sizing: border-box;
 }
 
 .selection {

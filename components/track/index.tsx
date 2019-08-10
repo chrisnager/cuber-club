@@ -4,7 +4,7 @@ export default function Track({ move, label, tracksLength, position, sound, isHi
   return (
     <tr>
       <td className={`frozen-column ${move === isHighlighted ? 'highlight' : ''}`}>
-        <b>{move}</b>: {label}
+        <b>{move}</b> <span>{label}</span>
       </td>
       {Array(tracksLength)
         .fill(1)

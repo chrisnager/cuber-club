@@ -1,37 +1,12 @@
-export default function PlayerHead({
-  tracksLength,
-  paused,
-  handleLeftClick,
-  handlePlayPause,
-  handleRightClick,
-  position,
-  handleInputChange
-}) {
+export default function PlayerHead({ tracksLength, paused, position, handleInputChange }) {
   return (
-    <>
-      <tr>
-        <th colSpan={2} className="frozen-column">
-          <button onClick={handlePlayPause}>{paused ? 'Play (B)' : 'Pause (B)'}</button>
-        </th>
-        <th colSpan={tracksLength}>
-          <div>
-            <button disabled={!paused} onClick={handleLeftClick}>
-              ↤ (D)
-            </button>
-            <button disabled={!paused} onClick={handleRightClick}>
-              (D') ↦
-            </button>
-          </div>
-        </th>
-      </tr>
-      <tr>
-        <th colSpan={2} className="frozen-column">
-          Moves
-        </th>
-        <th colSpan={tracksLength}>
-          <input disabled={!paused} type="range" max={tracksLength - 1} value={position} onChange={handleInputChange} />
-        </th>
-      </tr>
-    </>
+    <tr>
+      <th colSpan={2} className="frozen-column">
+        Moves
+      </th>
+      <th colSpan={tracksLength}>
+        <input disabled={!paused} type="range" max={tracksLength - 1} value={position} onChange={handleInputChange} />
+      </th>
+    </tr>
   )
 }

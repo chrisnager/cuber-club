@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { soundPack, tracksLength, msPerBeat } from '../../constants/configuration'
 import cubeSounds from '../../constants/cube-sounds'
 import moveMap from '../../constants/move-map'
+import PlayerControls from '../player-controls'
 import PlayerHead from '../player-head'
 import Track from '../track'
 
@@ -45,10 +46,11 @@ export default function Player({ isHighlighted, lastTurn, sequence }) {
 
   return (
     <section className="player">
+      <PlayerControls {...{ handlePlayPause, paused, handleLeftClick, handleRightClick }} />
       <div>
         <table>
           <thead>
-            <PlayerHead {...{ tracksLength, paused, handleLeftClick, handlePlayPause, handleRightClick, position, handleInputChange }} />
+            <PlayerHead {...{ tracksLength, paused, position, handleInputChange }} />
           </thead>
           <tbody>
             {Object.keys(moveMap).map(cubeSound => (
