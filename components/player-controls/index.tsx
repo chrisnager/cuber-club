@@ -28,10 +28,8 @@ const iconConfig = {
   height: 24,
   viewBox: '0 0 24 24',
   fill: '#000',
-  stroke: 'none',
-  strokeWidth: 3,
-  strokeLineCap: 'square',
-  strokeLineJoin: 'round',
+  stroke: '#000',
+  strokeWidth: 0.5,
   style: { marginLeft: 8 }
 }
 
