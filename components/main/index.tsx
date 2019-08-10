@@ -8,6 +8,8 @@ export default function Main() {
   const [sequence, setSequence] = useState([])
   const [isHighlighted, setIsHighlighted] = useState(null)
 
+  // TODO: Fix sequence
+
   const updateLocation = move => {
     window.history.replaceState({}, null, `?sequence=${sequence.join('')}${move}`)
   }
