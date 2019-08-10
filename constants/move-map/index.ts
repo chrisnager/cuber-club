@@ -9,6 +9,6 @@ export default {
   // "D'": 'Hi-hat 3',
   F: 'Cymbal',
   "F'": 'Bongo high',
-  B: 'Bongo low',
+  // B: 'Bongo low',
   "B'": 'Conga low'
 }
