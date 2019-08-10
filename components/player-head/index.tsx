@@ -10,7 +10,7 @@ export default function PlayerHead({
   return (
     <>
       <tr>
-        <th colSpan={2}>
+        <th colSpan={2} className="frozen-column">
           <button onClick={handlePlayPause}>{paused ? 'Play (B)' : 'Pause (B)'}</button>
         </th>
         <th colSpan={tracksLength}>
@@ -25,7 +25,9 @@ export default function PlayerHead({
         </th>
       </tr>
       <tr>
-        <th colSpan={2}>Moves</th>
+        <th colSpan={2} className="frozen-column">
+          Moves
+        </th>
         <th colSpan={tracksLength}>
           <input disabled={!paused} type="range" max={tracksLength - 1} value={position} onChange={handleInputChange} />
         </th>

@@ -1,6 +1,8 @@
 :root {
   --main: cyan;
   --main-darker: rgb(142, 255, 255);
+  --default: #eee;
+  --default-darker: #ccc;
 }
 
 html {
@@ -133,8 +135,7 @@ b {
 
 table {
   width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
+  border-spacing: 1px;
 }
 
 th,
@@ -147,8 +148,8 @@ th {
   text-align: left;
 }
 
-td:nth-of-type(4n + 6) {
-  border-right: 1px solid #fff;
+td:nth-of-type(4n + 5) {
+  box-shadow: 1px 0;
 }
 
 td:last-of-type {
@@ -160,11 +161,12 @@ td:nth-of-type(2) {
 }
 
 tr:nth-last-of-type(2n + 1) > td {
-  background-color: #eee;
+  background-color: var(--default);
 }
 
 input[type='range'] {
-  width: calc(100% - 6px);
+  width: calc(100% - 16px);
+  height: 32px;
   margin: 0 auto;
   display: block;
 }
@@ -176,6 +178,7 @@ footer {
 .player {
   margin-top: 2rem;
   overflow-x: auto;
+  position: relative;
 }
 
 .player div {
@@ -184,6 +187,19 @@ footer {
 
 .player div button:last-of-type {
   margin-left: 1rem;
+}
+
+.player > div {
+  margin-left: 120px;
+  overflow-x: scroll;
+  overflow-y: visible;
+}
+
+.frozen-column {
+  left: 0;
+  position: absolute;
+  top: auto;
+  width: 120px;
 }
 
 .selection {
@@ -196,12 +212,20 @@ input[type='checkbox'] {
   margin: 0;
   display: block;
   cursor: pointer;
-  background-image: linear-gradient(45deg, red, blue);
+  background-color: var(--default);
   appearance: none;
   -webkit-appearance: none;
 }
 
+input[type='checkbox']:hover,
+input[type='checkbox']:focus {
+  background-color: var(--default-darker);
+  outline-width: 3px;
+  outline-style: solid;
+  outline-color: blue;
+  outline-offset: -3px;
+}
+
 input[type='checkbox']:checked {
-  background-image: none;
   background-color: var(--main);
 }

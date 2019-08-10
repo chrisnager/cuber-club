@@ -45,22 +45,24 @@ export default function Player({ isHighlighted, lastTurn, sequence }) {
 
   return (
     <section className="player">
-      <table>
-        <thead>
-          <PlayerHead {...{ tracksLength, paused, handleLeftClick, handlePlayPause, handleRightClick, position, handleInputChange }} />
-        </thead>
-        <tbody>
-          {Object.keys(moveMap).map(cubeSound => (
-            <Track
-              key={cubeSound}
-              move={cubeSound}
-              label={moveMap[cubeSound]}
-              sound={cubeSounds[soundPack][moveMap[cubeSound]]}
-              {...{ tracksLength, position, isHighlighted, lastTurn }}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div>
+        <table>
+          <thead>
+            <PlayerHead {...{ tracksLength, paused, handleLeftClick, handlePlayPause, handleRightClick, position, handleInputChange }} />
+          </thead>
+          <tbody>
+            {Object.keys(moveMap).map(cubeSound => (
+              <Track
+                key={cubeSound}
+                move={cubeSound}
+                label={moveMap[cubeSound]}
+                sound={cubeSounds[soundPack][moveMap[cubeSound]]}
+                {...{ tracksLength, position, isHighlighted, lastTurn }}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   )
 }
