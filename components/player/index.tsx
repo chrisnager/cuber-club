@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { tracksLength, msPerBeat } from '../../constants/configuration'
+import { soundPack, tracksLength, msPerBeat } from '../../constants/configuration'
 import cubeSounds from '../../constants/cube-sounds'
 import moveMap from '../../constants/move-map'
 import PlayerHead from '../player-head'
@@ -55,7 +55,7 @@ export default function Player({ isHighlighted, lastTurn, sequence }) {
               key={cubeSound}
               move={cubeSound}
               label={moveMap[cubeSound]}
-              sound={cubeSounds[moveMap[cubeSound]]}
+              sound={cubeSounds[soundPack][moveMap[cubeSound]]}
               {...{ tracksLength, position, isHighlighted, lastTurn }}
             />
           ))}
