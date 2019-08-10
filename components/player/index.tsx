@@ -44,6 +44,8 @@ export default function Player({ isHighlighted, lastTurn, sequence }) {
     setPosition(+value)
   }
 
+  // TODO: Do I need a <form /> wrapper?
+
   return (
     <section className="player">
       <PlayerControls {...{ handlePlayPause, paused, handleLeftClick, handleRightClick }} />

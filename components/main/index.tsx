@@ -8,9 +8,9 @@ export default function Main() {
   const [sequence, setSequence] = useState([])
   const [isHighlighted, setIsHighlighted] = useState(null)
 
-  // const updateLocation = move => {
-  //   window.location.href += move
-  // }
+  const updateLocation = move => {
+    window.history.replaceState({}, null, `?sequence=${sequence.join('')}${move}`)
+  }
 
   const setAndRemoveHighlight = move => {
     setIsHighlighted(move)
@@ -28,9 +28,7 @@ export default function Main() {
     setLabel('Connected')
 
     giiker.on('move', move => {
-      // TODO: Update URL to include sequence
-      // updateLocation(move.notation)
-
+      updateLocation(move.notation)
       setSequence([...sequence, move.notation])
       setAndRemoveHighlight(move.notation)
     })
@@ -54,15 +52,6 @@ export default function Main() {
             </span>
           ))}
         </div>
-
-        {/* <h2>Sounds</h2>
-        <ul className="sounds">
-          {Object.keys(moveMap).map(moveName => (
-            <li key={moveName} className={`${moveName.replace("'", '-')} ${moveName === isHighlighted ? 'highlight' : ''}`}>
-              <b>{moveName}</b>: {moveMap[moveName]}
-            </li>
-          ))}
-        </ul> */}
       </div>
     </main>
   )
