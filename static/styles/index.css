@@ -3,6 +3,9 @@
   --main-darker: rgb(142, 255, 255);
   --default: #eee;
   --default-darker: #ccc;
+  --range-background: blue;
+  --range-thumb: gold;
+  --range-runnable-track: limegreen;
 }
 
 html {
@@ -28,7 +31,7 @@ header {
 header > div,
 footer > div,
 main > div {
-  /* max-width: 800px; */
+  /* max-width: 800; */
   margin-right: auto;
   margin-left: auto;
   padding: 1rem 3rem;
@@ -106,9 +109,8 @@ main {
   font-size: 1.5rem;
 }
 
-.highlight,
-.highlight > * {
-  background: var(--main) !important;
+.highlight {
+  background: var(--main);
 }
 
 ul {
@@ -188,45 +190,39 @@ input[type='range']::-webkit-slider-runnable-track {
   width: 100%;
   height: 32px;
   cursor: pointer;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
-  background: #ff0000;
-  border-radius: 0px;
-  border: 0px solid #ffffff;
+  background: var(--range-background);
+  border-radius: 0;
+  border: none;
 }
 
 input[type='range']::-webkit-slider-thumb {
-  box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0px 0px 0.8px rgba(0, 0, 88, 0.67);
-  border: 3px solid #000000;
   height: 32px;
   width: 32px;
-  border-radius: 0px;
-  background: #00ccff;
+  border-radius: 0;
+  background: var(--range-thumb);
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 input[type='range']:focus::-webkit-slider-runnable-track {
-  background: #ff3333;
+  background: var(--range-runnable-track);
 }
 
 input[type='range']::-moz-range-track {
   width: 100%;
   height: 32px;
   cursor: pointer;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
-  background: #ff0000;
-  border-radius: 0px;
-  border: 0px solid #ffffff;
+  background: var(--range-background);
+  border-radius: 0;
+  border: none;
 }
 
 input[type='range']::-moz-range-thumb {
-  box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0px 0px 0.8px rgba(0, 0, 88, 0.67);
-  border: 3px solid #000000;
   height: 32px;
   width: 32px;
-  border-radius: 0px;
-  background: #00ccff;
+  border-radius: 0;
+  background: var(--range-thumb);
   cursor: pointer;
 }
 
@@ -241,34 +237,30 @@ input[type='range']::-ms-track {
 
 input[type='range']::-ms-fill-lower {
   background: #cc0000;
-  border: 0px solid #ffffff;
-  border-radius: 0px;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  border: none;
+  border-radius: 0;
 }
 
 input[type='range']::-ms-fill-upper {
-  background: #ff0000;
-  border: 0px solid #ffffff;
-  border-radius: 0px;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: var(--range-background);
+  border: none;
+  border-radius: 0;
 }
 
 input[type='range']::-ms-thumb {
-  box-shadow: 0.8px 0.8px 1.9px rgba(0, 0, 62, 0.67), 0px 0px 0.8px rgba(0, 0, 88, 0.67);
-  border: 3px solid #000000;
   width: 32px;
-  border-radius: 0px;
-  background: #00ccff;
+  border-radius: 0;
+  background: var(--range-thumb);
   cursor: pointer;
   height: 32px;
 }
 
 input[type='range']:focus::-ms-fill-lower {
-  background: #ff0000;
+  background: var(--range-background);
 }
 
 input[type='range']:focus::-ms-fill-upper {
-  background: #ff3333;
+  background: var(--range-runnable-track);
 }
 
 footer {
@@ -281,16 +273,36 @@ footer {
 }
 
 .player > div:first-of-type {
+  max-width: 366px;
   display: flex;
   padding-bottom: 0.5rem;
 }
 
-.player div button:first-of-type {
-  width: 115px;
+.player > div:first-of-type > button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.player div button:not(:first-of-type) {
-  margin-left: 0.5rem;
+.player > div:first-of-type > button:first-of-type {
+  /* width: 122px; */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.player > div:first-of-type > button:last-of-type {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.player > div:first-of-type > button:not(:first-of-type) {
+}
+
+.player > div:first-of-type > button:not(:first-of-type):not(:last-of-type) {
+  border-right: none;
+  border-left: none;
+  border-radius: 0;
 }
 
 .player > div:last-of-type {
@@ -311,6 +323,10 @@ footer {
 
 .selection {
   text-align: center;
+}
+
+.selection.highlight > * {
+  background: var(--default-darker);
 }
 
 input[type='checkbox'] {
