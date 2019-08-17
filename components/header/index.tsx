@@ -16,7 +16,7 @@ export default function Header() {
             <a href="#1">1</a>
           </sup>
         </p>
-        <img src="https://media.giphy.com/media/vqYM1Ei0CcepW/giphy.gif" alt="Cube in motion" />
+        <img width={136} src="https://media.giphy.com/media/vqYM1Ei0CcepW/giphy.gif" alt="Cube in motion" />
       </div>
     </header>
   )
