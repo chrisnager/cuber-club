@@ -50,3 +50,5 @@ const connect = async () => {
 }
 
 export default { connect }
+
+// TODO: Find a way to connect more cubes
