@@ -1,11 +1,11 @@
 :root {
-  --main: cyan;
-  --main-darker: rgb(142, 255, 255);
+  --main: #222;
+  --main-darker: #000;
   --default: #eee;
   --default-darker: #ccc;
-  --range-background: blue;
-  --range-thumb: gold;
-  --range-runnable-track: limegreen;
+  --range-background: var(--main);
+  --range-thumb: var(--default);
+  --range-runnable-track: var(--main-darker);
 }
 
 html {
@@ -16,6 +16,7 @@ body {
   height: inherit;
   margin: 0;
   font: 1rem/1.5 system-ui, sans-serif;
+  color: var(--default);
 }
 
 #__next {
@@ -310,6 +311,7 @@ footer {
   margin-left: 120px;
   overflow-x: scroll;
   overflow-y: visible;
+  color: var(--main-darker);
 }
 
 .frozen-column {
