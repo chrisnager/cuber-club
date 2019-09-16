@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { soundPack, tracksLength, msPerBeat } from '../../constants/configuration'
 import cubeSounds from '../../constants/cube-sounds'
 import moveMap from '../../constants/move-map'
@@ -6,7 +6,15 @@ import PlayerControls from '../player-controls'
 import PlayerHead from '../player-head'
 import Track from '../track'
 
-export default function Player({ isHighlighted, lastTurn, sequence }) {
+interface PlayerProps {
+  isHighlighted: boolean
+  lastTurn: string
+  sequence: string[]
+  updateSong: () => void
+  song: {}
+}
+
+const Player: FC<PlayerProps> = ({ isHighlighted, lastTurn, sequence, updateSong, song }) => {
   const [paused, setPaused] = useState(true)
   const [position, setPosition] = useState(0)
 
@@ -61,7 +69,7 @@ export default function Player({ isHighlighted, lastTurn, sequence }) {
                 move={cubeSound}
                 label={moveMap[cubeSound]}
                 sound={cubeSounds[soundPack][moveMap[cubeSound]]}
-                {...{ tracksLength, position, isHighlighted, lastTurn }}
+                {...{ tracksLength, position, isHighlighted, lastTurn, setSong: updateSong, song }}
               />
             ))}
           </tbody>
@@ -70,3 +78,5 @@ export default function Player({ isHighlighted, lastTurn, sequence }) {
     </section>
   )
 }
+
+export default Player

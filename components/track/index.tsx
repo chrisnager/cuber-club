@@ -1,6 +1,6 @@
 import Selection from '../selection'
 
-export default function Track({ move, label, tracksLength, position, sound, isHighlighted, lastTurn }) {
+export default function Track({ move, label, tracksLength, position, sound, isHighlighted, lastTurn, setSong, song }) {
   return (
     <tr>
       <td className={`frozen-column ${move === isHighlighted ? 'highlight' : ''}`}>
@@ -9,7 +9,7 @@ export default function Track({ move, label, tracksLength, position, sound, isHi
       {Array(tracksLength)
         .fill(1)
         .map((_, index) => (
-          <Selection key={move + index} {...{ position, index, sound, move, lastTurn }} />
+          <Selection key={move + index} {...{ position, index, sound, move, lastTurn, setSong, song }} />
         ))}
     </tr>
   )

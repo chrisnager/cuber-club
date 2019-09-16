@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function Selection({ position, index, sound, move, lastTurn }) {
+export default function Selection({ position, index, sound, move, lastTurn, setSong, song }) {
   const [checked, setChecked] = useState(false)
 
   useEffect(() => {
@@ -15,6 +15,16 @@ export default function Selection({ position, index, sound, move, lastTurn }) {
 
   const handleChange = () => {
     setChecked(!checked)
+
+    // setSong({
+    //   song: {
+    //     ...song,
+    //     song[move]: [
+    //       ...song[move],
+    //       song[move][index]: !song[move][index]
+    //     ]
+    //   }
+    // })
   }
 
   const handleClick = () => {

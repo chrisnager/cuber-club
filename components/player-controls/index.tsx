@@ -27,8 +27,8 @@ const iconConfig = {
   width: 24,
   height: 24,
   viewBox: '0 0 24 24',
-  fill: '#000',
-  stroke: '#000',
+  fill: '#fff',
+  stroke: '#fff',
   strokeWidth: 0.5,
   style: { marginLeft: 8 }
 }

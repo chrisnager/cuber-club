@@ -1,12 +1,24 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
+import moveMap from '../../constants/move-map'
 import Giiker from '../../scripts/giiker'
 import Player from '../player'
 
 export default function Main() {
+  const initialSong = {}
+
+  Object.keys(moveMap).forEach(move => {
+    initialSong[move] = Array(32).fill(false)
+  })
+
   const [isEnabled, setsIsEnabled] = useState(true)
   const [label, setLabel] = useState('Connect cube')
   const [sequence, setSequence] = useState([])
   const [isHighlighted, setIsHighlighted] = useState(null)
+  const [song, setSong] = useState(initialSong)
+
+  const updateSong = useCallback(() => {
+    setSong(null)
+  }, [])
 
   // TODO: Fix sequence
 
@@ -32,6 +44,7 @@ export default function Main() {
     giiker.on('move', move => {
       updateLocation(move.notation)
       setSequence([...sequence, move.notation])
+      // setSong([...song, move.notation])
       setAndRemoveHighlight(move.notation)
     })
   }
@@ -43,7 +56,7 @@ export default function Main() {
           {label}
         </button>
 
-        <Player lastTurn={sequence[sequence.length - 1]} {...{ isHighlighted, sequence }} />
+        <Player lastTurn={sequence[sequence.length - 1]} {...{ isHighlighted, sequence, updateSong, song }} />
 
         <h2>Your moves</h2>
         <p>Hold cube with white on top and green facing you.</p>
