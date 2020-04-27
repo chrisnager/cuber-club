@@ -307,6 +307,7 @@ footer {
 }
 
 .player > div:last-of-type {
+  max-width: 1058px;
   margin-left: 120px;
   overflow-x: scroll;
   overflow-y: visible;
