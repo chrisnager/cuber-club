@@ -1,11 +1,11 @@
 :root {
-  --main: #222;
-  --main-darker: #000;
-  --default: #eee;
-  --default-darker: #ccc;
-  --range-background: var(--main);
-  --range-thumb: var(--default);
-  --range-runnable-track: var(--main-darker);
+  --main: #beffff;
+  --main-darker: rgb(142 255 255);
+  --default: #f4f4f4;
+  --default-darker: #ddd;
+  --range-background: var(--default);
+  --range-thumb: rgb(0 0 0 / 0.25);
+  --range-runnable-track: var(--default-darker);
 }
 
 html {
@@ -16,7 +16,6 @@ body {
   height: inherit;
   margin: 0;
   font: 1rem/1.5 system-ui, sans-serif;
-  color: var(--default);
 }
 
 #__next {
@@ -46,13 +45,13 @@ header > div > h1 {
   font-size: 2.25rem;
 }
 
-@media (max-width: 1000px) {
-  header > div > h1 {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 0;
-  }
+/* @media (max-width: 1000px) { */
+header > div > h1 {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0;
 }
+/* } */
 
 header > div > h1 > img {
   width: 4rem;
@@ -61,12 +60,12 @@ header > div > h1 > img {
   display: block;
 }
 
-@media (max-width: 1000px) {
-  header > div > h1 > img {
-    margin-left: -1rem;
-    margin-bottom: 1.5rem;
-  }
+/* @media (max-width: 1000px) { */
+header > div > h1 > img {
+  margin-left: -1rem;
+  margin-bottom: 1.5rem;
 }
+/* } */
 
 header > div > img {
   max-width: 136px;
@@ -160,7 +159,7 @@ td:first-of-type {
 }
 
 td:nth-of-type(4n + 5) {
-  box-shadow: 1px 0;
+  box-shadow: 1px 0 var(--default-darker);
 }
 
 td:last-of-type {
@@ -311,7 +310,6 @@ footer {
   margin-left: 120px;
   overflow-x: scroll;
   overflow-y: visible;
-  color: var(--main-darker);
 }
 
 .frozen-column {
@@ -343,17 +341,20 @@ input[type='checkbox'] {
   -webkit-appearance: none;
 }
 
+:focus {
+  outline-width: 3px;
+  outline-style: solid;
+  outline-color: #000;
+}
+
 input[type='checkbox']:hover,
 input[type='checkbox']:focus {
   background-color: var(--default-darker);
-  outline-width: 3px;
-  outline-style: solid;
-  outline-color: blue;
   outline-offset: -3px;
 }
 
 input[type='checkbox']:checked {
-  background-color: var(--main);
+  background-color: cyan;
 }
 
 footer > div > p:first-of-type {

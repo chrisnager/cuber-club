@@ -11,7 +11,7 @@ export default function Footer() {
           imagination. See the source code on <a href="https://github.com/chrisnager/smart-cube">GitHub</a>.
         </p>
         <p>
-          &copy; {new Date().getFullYear()} &middot; Crafted by <a href="http://chrisnager.com">Chris Nager</a>
+          &copy; {new Date().getFullYear()} &middot; Crafted by <a href="https://chrisnager.com">Chris Nager</a>
         </p>
       </div>
     </footer>
